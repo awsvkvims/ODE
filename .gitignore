@@ -1,0 +1,90 @@
+# ============================
+# Python
+# ============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# ============================
+# IDE
+# ============================
+
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ============================
+# Jupyter
+# ============================
+
+.ipynb_checkpoints/
+
+# ============================
+# Environment Variables
+# ============================
+
+.env
+.env.*
+!.env.example
+
+# ============================
+# API Keys / Secrets
+# ============================
+
+config/secrets.json
+config/api_keys.json
+
+# ============================
+# Local Databases
+# ============================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================
+# Logs
+# ============================
+
+logs/
+*.log
+
+# ============================
+# Temporary Files
+# ============================
+
+tmp/
+temp/
+*.tmp
+
+# ============================
+# Test Output
+# ============================
+
+coverage/
+htmlcov/
+.pytest_cache/
+
+# ============================
+# Generated Reports
+# ============================
+
+reports/generated/
