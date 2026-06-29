@@ -48,6 +48,26 @@ def belowCount = lookback - aboveCount;
 def trendPersistenceScore =
     Max(aboveCount, belowCount) / lookback * 100;
 
+
+#----------------------------------------------------------
+# EMA Alignment
+#----------------------------------------------------------
+
+input fastLength = 9;
+input longLength = 50;
+
+def ema9 = ExpAverage(close, fastLength);
+def sma50 = Average(close, longLength);
+
+def bullAlignment = ema9 > ema20 and ema20 > sma50;
+def bearAlignment = ema9 < ema20 and ema20 < sma50;
+
+def emaAlignmentScore =
+    if bullAlignment or bearAlignment then 100
+    else 0;
+
+
+
 #----------------------------------------------------------
 # Display
 #----------------------------------------------------------
@@ -77,3 +97,21 @@ AddLabel(
     "Bias: " + (if bullBias then "BULL" else "BEAR"),
     if bullBias then Color.GREEN else Color.RED
 );
+
+AddLabel(
+    yes,
+    "EMA Alignment: " +
+    (if bullAlignment then "BULL"
+     else if bearAlignment then "BEAR"
+     else "MIXED"),
+    if bullAlignment then Color.GREEN
+    else if bearAlignment then Color.RED
+    else Color.YELLOW
+);
+
+AddLabel(
+    yes,
+    "Alignment Score: " + emaAlignmentScore,
+    Color.WHITE
+);
+
