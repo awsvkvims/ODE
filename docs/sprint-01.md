@@ -1,15 +1,25 @@
 # Sprint 1
 
+GODE-001
+
 Goal
 
-Determine whether today's market is:
+Determine Market State.
 
-- Trend
-- Range
-- Transition
+Inputs
 
-Deliverables
+- EMA Persistence
+- HH/HL
+- EMA Stack
+- ADX
+- ADD
+- TICK
+- VIX
+- Pullback Depth
+- VWAP (optional)
 
-- Market State Engine
-- Verification
-- Feedback
+Outputs
+
+- Trend Probability
+- Range Probability
+- Confidence
